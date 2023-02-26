@@ -1,0 +1,41 @@
+@use '../../styles/abstracts' as a;
+
+// Caching the Current Selector (&) in Sass
+// https://css-tricks.com/snippets/sass/caching-current-selector-sass/
+
+$button-hover-color: #001aff;
+$button-hover-bg-color: #f1f5ff;
+
+.button {
+  $this: &;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 19px 15px 24px;
+  border: none;
+  border-radius: 200px;
+  background-color: a.$white;
+  cursor: pointer;
+  transition: color 0.2s ease-in;
+
+  & &__label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  & &__image path {
+    transition: stroke 0.2s ease-in;
+  }
+
+  &:hover {
+    color: $button-hover-color;
+    #{$this}__image path {
+      stroke: $button-hover-color;
+    }
+  }
+
+  &:active {
+    background-color: $button-hover-bg-color;
+  }
+}
