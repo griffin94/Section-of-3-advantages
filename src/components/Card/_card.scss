@@ -1,0 +1,109 @@
+@use '../../styles/abstracts' as a;
+
+.cards {
+  max-width: 752px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  $this: &;
+  padding: 24px 16px;
+  border-radius: a.$rounding;
+
+  &#{&}--green {
+    background-color: a.$green-light;
+    #{$this}__image-container {
+      background-color: a.$green-dark;
+    }
+  }
+
+  &#{&}--blue {
+    background-color: a.$blue-light;
+    #{$this}__image-container {
+      background-color: a.$blue-dark;
+    }
+  }
+
+  &#{&}--gold {
+    background-color: a.$gold-light;
+    #{$this}__image-container {
+      background-color: a.$gold-dark;
+    }
+  }
+
+  & &__image-container {
+    width: 48px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+
+  & &__image {
+    width: 24px;
+    aspect-ratio: 1 / 1;
+  }
+
+  & &__heading {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 120%;
+    margin: 16px 0 8px;
+  }
+
+  & &__paragraph {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 16px;
+    color: #141414;
+  }
+}
+
+@media (min-width: a.$tablet) {
+  .card {
+    padding: 24px;
+
+    & &__image-container {
+      width: 72px;
+    }
+
+    & &__image {
+      width: 40px;
+    }
+
+    & &__heading {
+      font-size: 32px;
+    }
+
+    & &__paragraph {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+}
+
+@media (min-width: a.$desktop) {
+  .cards {
+    flex-direction: row;
+    max-width: 1136px;
+
+    gap: 16px;
+  }
+
+  .card {
+    flex: 1;
+    padding: 32px;
+
+    & &__heading {
+      margin: 24px 0 16px;
+    }
+
+    & &__paragraph {
+      margin-bottom: 24px;
+    }
+  }
+}
