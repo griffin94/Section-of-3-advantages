@@ -1,11 +1,12 @@
 @use '../components';
 @use '../pages';
 
-body {
-  font-family: 'Roboto', sans-serif;
-  color: var(--color-primary);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-p {
-  color: var(--color-on-surface);
+body {
+  font-family: 'Raleway', sans-serif;
 }
