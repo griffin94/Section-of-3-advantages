@@ -11,6 +11,9 @@
   $this: &;
   padding: 24px 16px;
   border-radius: a.$rounding;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 
   &#{&}--green {
     background-color: a.$green-light;
@@ -60,6 +63,10 @@
     line-height: 20px;
     margin-bottom: 16px;
     color: #141414;
+  }
+
+  & &__button {
+    margin-top: auto;
   }
 }
 
