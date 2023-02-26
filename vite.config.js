@@ -5,5 +5,5 @@ export default {
     css: {
         devSourcemap: true,
     },
-    base: '/REPO_NAME/'
+    base: '/Section-of-3-advantages/'
 }
